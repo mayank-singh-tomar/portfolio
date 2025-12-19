@@ -9,8 +9,8 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "su-23020@sitare.org",
-      href: "mailto:su-23020@sitare.org",
+      value: "mayankksinghtomar@gmail.com",
+      href: "mailto:mayankksinghtomar@gmailcom",
     },
     {
       icon: Phone,
@@ -30,7 +30,7 @@ export function Contact() {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/mayanksingh",
+      href: "https://github.com/mayank-singh-tomar",
     },
     {
       icon: Linkedin,
@@ -119,7 +119,7 @@ export function Contact() {
                   className="w-full gap-2 bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                   asChild
                 >
-                  <a href="mailto:su-23020@sitare.org">
+                  <a href="mailto:mayankksinghtomar@gmail.com.org">
                     <Mail className="w-5 h-5" />
                     Send Me an Email
                   </a>
@@ -133,11 +133,6 @@ export function Contact() {
           </div>
 
           <Card className="p-8 text-center animate-fade-in-up animation-delay-400">
-            <p className="text-muted-foreground">
-              Built with ❤️ using <span className="text-primary font-semibold">Next.js</span>,{" "}
-              <span className="text-primary font-semibold">React</span>, and{" "}
-              <span className="text-primary font-semibold">Tailwind CSS</span>
-            </p>
             <p className="text-sm text-muted-foreground mt-2">© 2025 Mayank Singh Tomar. All rights reserved.</p>
           </Card>
         </div>

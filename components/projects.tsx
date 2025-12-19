@@ -7,31 +7,39 @@ import { ExternalLink, Github } from "lucide-react"
 
 export function Projects() {
   const projects = [
-    {
-      title: "Khelo-ON",
-      description:
-        "A comprehensive fitness application featuring real-time location tracking, health metrics monitoring, nutrition insights, and Google-authenticated dashboards for personalized fitness journeys.",
-      technologies: ["Flutter", "FastAPI", "Firebase", "Google Fit API", "Maps API", "GCP"],
-      image: "/fitness-app-mobile-tracking.jpg",
-      category: "Mobile App",
-    },
-    {
-      title: "AI Chatbot",
-      description:
-        "An intelligent NLP-powered AI chatbot designed for students, efficiently handling over 300 queries with advanced vector search capabilities and semantic understanding.",
-      technologies: ["SBERT", "Llama", "Flask", "NLP", "Information Retrieval"],
-      image: "/ai-chatbot-interface.png",
-      category: "AI/ML",
-    },
-    {
-      title: "Food Delivery Predictor",
-      description:
-        "A machine learning-based system for estimating food delivery times by analyzing traffic conditions, distance, and historical data patterns to provide accurate predictions.",
-      technologies: ["Flask", "Pandas", "Matplotlib", "HTML", "CSS", "Machine Learning"],
-      image: "/food-delivery-dashboard.jpg",
-      category: "Web App",
-    },
-  ]
+  {
+    title: "Khelo-ON",
+    description:
+      "A comprehensive fitness application featuring real-time location tracking, health metrics monitoring, nutrition insights, and Google-authenticated dashboards for personalized fitness journeys.",
+    technologies: ["Flutter", "FastAPI", "Firebase", "Google Fit API", "Maps API", "GCP"],
+    image: "/fitness-app-mobile-tracking.jpg",
+    category: "Mobile App",
+    githubUrl: "https://github.com/KheloON/Khelo-ON/tree/main/KheloON/App",
+    demoUrl: "#", 
+  },
+  {
+    title: "AI Chatbot",
+    description:
+      "An intelligent NLP-powered AI chatbot designed for students, efficiently handling over 300 queries with advanced vector search capabilities and semantic understanding.",
+    technologies: ["SBERT", "Llama", "Flask", "NLP", "Information Retrieval"],
+    image: "/ai-chatbot-interface.png",
+    category: "AI/ML",
+    githubUrl: "https://github.com/mayank-singh-tomar/SU-Chatbot",
+    demoUrl: "#",
+   
+  },
+  {
+    title: "Food Delivery Predictor",
+    description:
+      "A machine learning-based system for estimating food delivery times by analyzing traffic conditions, distance, and historical data patterns to provide accurate predictions.",
+    technologies: ["Flask", "Pandas", "Matplotlib", "HTML", "CSS", "Machine Learning"],
+    image: "/food-delivery-dashboard.jpg",
+    category: "Web App",
+    githubUrl: "https://github.com/mayank-singh-tomar/Food-delivery-predictor",
+    demoUrl: "#",
+  },
+]
+
 
   return (
     <section id="projects" className="py-24">
@@ -75,15 +83,35 @@ export function Projects() {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="gap-2 flex-1 bg-transparent">
+  {/* Code Button - always available */}
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="gap-2 flex-1 bg-transparent"
+                    asChild
+                  >
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4" />
                       Code
+                    </a>
+                  </Button>
+
+                  {/* Demo Button - conditional */}
+                  {project.demoUrl ? (
+                    <Button size="sm" className="gap-2 flex-1" asChild>
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </a>
                     </Button>
-                    <Button size="sm" className="gap-2 flex-1">
+                  ) : (
+                    <Button size="sm" className="gap-2 flex-1" disabled>
                       <ExternalLink className="w-4 h-4" />
                       Demo
                     </Button>
-                  </div>
+                  )}
+                </div>
+
                 </div>
               </Card>
             ))}
